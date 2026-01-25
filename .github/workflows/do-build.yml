@@ -1,0 +1,30 @@
+name: Build
+
+on:
+  push:
+    branches: [ release ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: true
+      matrix:
+        app-name:
+          - ShadowAI
+        os:
+          - macos-15-intel
+          - macos-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.SOURCE_REPO_PAT }}
+          repository: ${{ secrets.SOURCE_REPO }}
+          ref: main
+
+      - uses: ./.github/actions/build
+        with:
+          os: ${{ matrix.os }}
+          app-name: ${{ matrix.app-name }}
