@@ -1,28 +1,28 @@
 # Shadow AI
 
-## MacOS
+## MacOS 依赖
 
 ```shell
-1. 下载语音识别 STT 模型并解压
+1. 语音识别 STT 模型, 下载并解压
 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2
 
-2. 安装驱动 BlackHole: Audio Loopback Driver, 下载默认的 blackhole-2ch
+2. 驱动 BlackHole: Audio Loopback Driver, 安装默认的 blackhole-2ch 即可
 https://github.com/ExistentialAudio/BlackHole?tab=readme-ov-file#option-1-download-installer
 ```
 
-## Windows
+## Windows 依赖
 
 ```shell
-1. 下载语音识别 STT 模型并解压
+1. 语音识别 STT 模型, 下载并解压
 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2
 ```
 
 ## 软件设置
 
 ```shell
-1. 启动软件会自动打开功能引导页
+1. 应用启动后, 会自动打开功能引导页
 2. 设置中添加您的 AI 服务, 默认模型, 添加您自定义的提示词
-3. 配置上一步中下载解压的STT模型路径, 例如: /Users/xiang/Downloads/models/sherpa-onnx-streaming-zipformer-zh-2025-06-30
+3. 配置上一步中解压的 STT 模型路径, 例如: /Users/david/Downloads/models/sherpa-onnx-streaming-zipformer-zh-2025-06-30
 ```
 
 ## 功能介绍
