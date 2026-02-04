@@ -54,4 +54,6 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
   3.4 程序退出
 ```
 
-![screenshot](screenshots/index.jpg)
+<p align="center">
+  <img src="screenshots/index.jpg" width="80%" />
+</p>
