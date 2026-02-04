@@ -7,7 +7,7 @@
 <details><summary>MacOS</summary>
 
 ```text
-1. 语音识别 STT 模型，下载并解压
+1. 语音识别 STT 模型，下载并解压（如果不需要可跳过）
 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2
 
 2. 音频驱动 BlackHole: Audio Loopback Driver，安装默认的 blackhole-2ch 即可
@@ -21,7 +21,7 @@ https://github.com/ExistentialAudio/BlackHole?tab=readme-ov-file#option-1-downlo
 <details><summary>Windows</summary>
 
 ```text
-1. 语音识别 STT 模型，下载并解压
+1. 语音识别 STT 模型，下载并解压（如果不需要可跳过）
 https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2
 ```
 
