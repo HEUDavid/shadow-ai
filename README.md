@@ -30,7 +30,8 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 ## 功能介绍
 
 1. 启动后，会自动在浏览器中打开引导页
-   ![screenshot](screenshots/welcome.webp)
+
+![screenshot](screenshots/welcome.webp)
 
 2. 可以添加自定义 AI 服务、默认模型、自定义的提示词等。其中需要注意配置「语音识别」，需填写「前面解压得到的 STT
    模型路径」例如：
@@ -39,7 +40,7 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 /Users/david/Downloads/models/sherpa-onnx-streaming-zipformer-zh-2025-06-30
 ```
 
-   ![screenshot](screenshots/settings.webp)
+![screenshot](screenshots/settings.webp)
 
 3. 功能页说明
 
@@ -53,4 +54,4 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
   3.4 程序退出
 ```
 
-   ![screenshot](screenshots/index.jpg)
+![screenshot](screenshots/index.jpg)
