@@ -27,13 +27,13 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 
 </details>
 
-## 功能介绍
+## 使用说明
 
 1. 启动后，会自动在浏览器中打开引导页
 
 ![screenshot](screenshots/welcome.webp)
 
-2. 可以添加自定义 AI 服务、默认模型、自定义的提示词等。其中需要注意配置「语音识别」，需填写「前面解压得到的 STT
+2. 设置中可以添加自定义 AI 服务、默认模型、自定义的提示词等。其中需要注意配置「语音识别」，需填写「前面解压得到的 STT
    模型路径」例如：
 
 ```text
