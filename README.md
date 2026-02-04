@@ -27,7 +27,7 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 
 </details>
 
-## 用户手册
+## 使用手册
 
 1. 启动后，会自动在浏览器中打开引导页
 
