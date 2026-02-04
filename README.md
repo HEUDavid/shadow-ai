@@ -2,10 +2,9 @@
 
 ### 无痕无感的 AI 工具，可以在「受控设备/受限环境」使用 AI, 极速且高效且稳定
 
-## 依赖
+## 系统依赖
 
-<details>
-  <summary>MacOS 依赖</summary>
+<details><summary>MacOS</summary>
 
 ```text
 1. 语音识别 STT 模型, 下载并解压
@@ -14,13 +13,12 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 2. 音频驱动 BlackHole: Audio Loopback Driver, 安装默认的 blackhole-2ch 即可
 https://github.com/ExistentialAudio/BlackHole?tab=readme-ov-file#option-1-download-installer
 
-2.1. 打开「音频 MIDI 设置」-> 创建「多输出设备」，勾选内建输出 + BlackHole 2ch -> 右键将「多输出设备」用于声音输出
+打开「音频 MIDI 设置」-> 创建「多输出设备」，勾选内建输出 + BlackHole 2ch -> 右键将「多输出设备」用于声音输出
 ```
 
 </details>
 
-<details>
-  <summary>Windows 依赖</summary>
+<details><summary>Windows</summary>
 
 ```text
 1. 语音识别 STT 模型, 下载并解压
@@ -29,15 +27,21 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 
 </details>
 
-## 设置
+## 功能介绍
+
+1. 启动后, 会自动在浏览器中打开引导页
+   ![screenshot](screenshots/welcome.webp)
+
+2. 可以添加自定义 AI 服务, 默认模型, 自定义的提示词等。其中需要注意配置「语音识别」，需填写「前面解压得到的 STT
+   模型路径」例如:
 
 ```text
-1. 应用启动后, 会自动在浏览器中打开引导页
-2. 设置中可以添加自定义 AI 服务, 默认模型, 自定义的提示词等
-3. 语音识别配置: 需要填写「上一步解压得到的 STT 模型路径」, 例如: /Users/david/Downloads/models/sherpa-onnx-streaming-zipformer-zh-2025-06-30
+/Users/david/Downloads/models/sherpa-onnx-streaming-zipformer-zh-2025-06-30
 ```
 
-## 功能介绍
+   ![screenshot](screenshots/settings.webp)
+
+3. 功能页说明
 
 ```text
 1. 语音识别区: 应用会使用模型实时识别音频里的语音, 并在这里实时更新字幕
@@ -48,3 +52,6 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
   3.3 语音文本重置, 点击之后清理语音转写文本缓存
   3.4 程序退出
 ```
+
+   ![screenshot](screenshots/index.jpg)
+
