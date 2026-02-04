@@ -55,5 +55,5 @@ https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-s
 ```
 
 <p align="center">
-  <img src="screenshots/index.jpg" width="80%" />
+  <img src="screenshots/index.jpg" width="50%" />
 </p>
