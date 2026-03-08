@@ -26,6 +26,8 @@ jobs:
 
       - uses: ./.github/actions/build
         id: build
+        env:
+          SOURCE_REPO_PAT: ${{ secrets.SOURCE_REPO_PAT }}
         with:
           os: ${{ matrix.os }}
           app-name: ${{ matrix.app-name }}
