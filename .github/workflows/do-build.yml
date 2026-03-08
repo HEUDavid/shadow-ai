@@ -12,8 +12,8 @@ jobs:
         app-name:
           - ShadowAI
         os:
-          - macos-15-intel
-          - macos-latest
+          #- macos-15-intel
+          #- macos-latest
           - windows-latest
     runs-on: ${{ matrix.os }}
 
