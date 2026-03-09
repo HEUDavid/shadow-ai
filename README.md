@@ -1,10 +1,10 @@
-## Shadow AI「影子 AI」
+## Shadow AI
 
-#### 无痕无感的 AI 工具，可以在「受控设备/受限环境」使用 AI，极速且高效且稳定
+#### 隐子 AI 工具，可以让您在「受控设备/受限场景」中使用 AI
 
-- 无窗口，双端互联，跨设备辅助
-    - 例如各种「面试/笔试/测评」场景
+- 无痕无感隐身：通过「无窗口 + 双端互联」跨设备推送
+    - 例如各种「测评/笔试/面试」场景
+- 极速高效稳定：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」账号登录，使用大厂 AI 服务
+    - 支持多账号：token 量大管饱、并发提问极速响应
+    - 支持自定义各种 AI 模型
 
-#### 支持「OpenAI Codex、Claude Code、Antigravity、Gemini、Kimi、千问」作为后端 AI Provider
-
-- 支持自定义各种 AI 模型
