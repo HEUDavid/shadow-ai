@@ -4,7 +4,6 @@
 
 - 无痕无感隐身：无窗口 + 双端互联 + 跨设备推送
     - 例如各种「测评/笔试/面试」场景
-- 极速高效稳定：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」账号登录，使用大厂 AI 服务
-    - 支持多账号：token 量大管饱、并发提问极速响应
-    - 支持自定义各种 AI 模型
-
+- 极速高效稳定：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」使用大厂 AI 服务
+    - 支持多账号号池：token 量大管饱、并发提问获得极速响应
+    - 支持其他自定义 AI
