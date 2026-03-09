@@ -1,4 +1,4 @@
-## Shadow AI
+# Shadow AI
 
 #### 隐子 AI 工具，可以让您在「受控设备/受限场景」中使用 AI
 
@@ -7,3 +7,7 @@
 - 极速高效稳定：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」使用大厂 AI 服务
     - 支持多账号号池：token 量大管饱、并发提问获得极速响应
     - 支持其他自定义 AI
+
+## 安装
+
+## 使用手册
