@@ -9,15 +9,18 @@
     - 支持其他自定义 AI
 
 ![欢迎使用](screenshots/welcome.webp "欢迎使用")
-局域网其他设备「手机、平板」打开局域网地址即可跨设备
+局域网其他设备「手机、平板」打开局域网地址即可远程操作
 
 ![登录](screenshots/auth.webp "登录")
+可以点击 “模型 +”，快速添加到自定义 AI 中
 
 ![测试AI](screenshots/test-ai.webp "测试AI")
+可以测试AI 是否正常工作
 
-![配置AI](screenshots/default-model.webp "配置AI")
+![配置AI](screenshots/default-model.webp "配置默认AI服务")
 
 ![设置提示词](screenshots/prompts.webp "设置提示词")
+结合你的需求场景，配置自己的提示词
 
 ![图片分析示例](screenshots/vlm-question.webp "图片分析示例")
 
