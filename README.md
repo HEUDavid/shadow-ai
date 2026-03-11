@@ -58,6 +58,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 1. 如何启用截图分析？
     * 权限检查：设置 -> 安全性与隐私 -> 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
+    * ![截图权限](screenshot-permission.png "截图权限")
 2. 如何启用语音识别分析？
     1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
