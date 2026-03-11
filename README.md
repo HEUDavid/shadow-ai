@@ -11,8 +11,9 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 - **大厂 AI 服务：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」登录，极速稳定**
 - **并发与路由**：支持多账号与并发
 
-## 界面与功能
+## 界面
 
+**功能页**
 ![欢迎使用](screenshots/welcome.webp "欢迎使用")
 
 | ![图片分析示例](screenshots/vlm-question.webp "图片提问") | ![AI 回答示例](screenshots/vlm-answer.jpg "AI 回答") |
@@ -28,16 +29,17 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ![测试AI](screenshots/test-ai.webp "测试AI")
 
-#### 切换模型
+**切换模型**
 
 可以为视觉（截图分析）、音频（语音问答）指定不同的模型，多选则并发提问，然后显示最快的回答
+
 ![配置AI](screenshots/default-model.webp "配置默认AI服务")
 
 #### 提示词配置
 
 结合自定义应用场景，设置系统提示词
-![设置提示词](screenshots/prompts.webp "设置提示词")
 
+![设置提示词](screenshots/prompts.webp "设置提示词")
 
 </details>
 
