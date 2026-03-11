@@ -40,7 +40,9 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ## 反馈交流
 
-用户群组：https://t.me/shadow_ai_group
+<details><summary><strong>Telegram</strong></summary>
+https://t.me/shadow_ai_group
+</details>
 
 ## 常见问题
 
