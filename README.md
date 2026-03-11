@@ -38,6 +38,10 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 </details>
 
+## 问题反馈
+
+https://t.me/+Y4CrztQ8xEpiYTE1
+
 ## 常见问题
 
 <details><summary><strong>Windows</strong></summary>
