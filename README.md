@@ -15,7 +15,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ![欢迎使用](screenshots/welcome.webp "欢迎使用")
 
-| <img alt="图片分析示例" height="600px" src="screenshots/vlm-question.webp" title="图片提问"/> | <img alt="AI 回答示例" height="600px" src="screenshots/vlm-answer.jpg" title="AI 回答"/> |
+| <img alt="图片分析示例" height="700px" src="screenshots/vlm-question.webp" title="图片提问"/> | <img alt="AI 回答示例" height="700px" src="screenshots/vlm-answer.jpg" title="AI 回答"/> |
 |-------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 
 <details><summary><strong>AI 设置</strong></summary>
