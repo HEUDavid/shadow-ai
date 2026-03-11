@@ -22,9 +22,9 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 **多渠道支持** 支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」等 AI 工具作为后端大模型
 
-![登录](screenshots/auth.webp "登录")
+![登录认证](screenshots/auth.webp "登录认证")
 
-**测试连接** 点击添加模型到自定义 AI，然后测试模型是否正常工作
+**测试模型** 点击添加模型到自定义 AI，然后测试模型是否正常工作
 
 ![测试AI](screenshots/test-ai.webp "测试AI")
 
@@ -56,7 +56,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 1. 如何启用截图分析？
     * 权限检查：设置 → 安全性与隐私 → 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
-      ![截图权限](screenshots/screenshot-permission.png "截图权限")
+      <img alt="截图权限" height="500px" src="screenshots/screenshot-permission.png" title="截图权限"/>
 2. 如何启用语音识别分析？
     1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
