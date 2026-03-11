@@ -49,7 +49,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
     * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
     * STT 模型地址
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-    * 如何验证？播放一段音频，语音识别区应实时转写字幕。
+    * 如何验证？播放一段音频，语音识别区应实时转写字幕
 
 </details>
 
@@ -68,7 +68,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
         * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
         * STT 模型地址
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-        * 如何验证？播放一段音频，语音识别区应实时转写字幕。
+        * 如何验证？播放一段音频，语音识别区应实时转写字幕
 
 </details>
 
