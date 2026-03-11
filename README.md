@@ -54,14 +54,13 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 <details><summary><strong>MacOS</strong></summary>
 
 1. 如何启用截图分析？
-    * 设置 -> 安全性与隐私 -> 屏幕录制：允许本程序
+    * 权限检查：设置 -> 安全性与隐私 -> 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
 2. 如何启用语音问答？
     1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
     2. 打开「音频 MIDI 设置」
     3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
     4. 将多输出设备设为系统默认输出
-    5. 在 `config.yml` 中设置 `device_name: BlackHole`
 
 </details>
 
