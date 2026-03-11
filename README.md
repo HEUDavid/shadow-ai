@@ -42,7 +42,23 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ## 常见问题
 
-1. 授予权限后需要重启才会生效
+<details><summary><strong>Windows</strong></summary>
+
+1. 程序免安装，解压后即可使用。
+2. 权限设置：TODO
+3. 如何启用语音识别分析？
+    * 下载语音识别 STT 模型并解压，然后在设置页面配置模型路径
+    * 模型地址：
+      `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+
+</details>
+
+<details><summary><strong>MacOS</strong></summary>
+
+1. 授予权限后，需要重启软件
+2. 如何启用语音识别分析？
+
+</details>
 
 ## 免责声明
 
