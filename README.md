@@ -13,26 +13,26 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ## 界面与功能
 
-### 首页
+#### 首页
 
 ![欢迎使用](screenshots/welcome.webp "欢迎使用")
 
-### AI 配置
+#### AI 配置
 
 ![登录](screenshots/auth.webp "登录")
 登录成功后，快速添加到自定义 AI，然后测试AI 是否正常工作
 ![测试AI](screenshots/test-ai.webp "测试AI")
 
-### 切换模型
+#### 切换模型
 
 ![配置AI](screenshots/default-model.webp "配置默认AI服务")
 
-### 提示词配置
+#### 提示词配置
 
 结合自定义应用场景，设置系统提示词
 ![设置提示词](screenshots/prompts.webp "设置提示词")
 
-### 使用示例
+#### 使用示例
 
 ![图片分析示例](screenshots/vlm-question.webp "图片提问")
 ![AI回答](screenshots/vlm-answer.jpg "AI解析")
