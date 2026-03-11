@@ -46,9 +46,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 1. 程序免安装，解压后即可使用。
 2. 如何启用语音识别分析？
-    * 下载 STT 模型并解压，然后在设置页面配置语音转写模型路径
-    * 模型地址：
-      `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+    * 下载 [STT 模型](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)并解压，然后在设置中配置语音转写模型路径
     * 如何验证？播放一段音频，语音识别区应实时转写字幕。
 
 </details>
