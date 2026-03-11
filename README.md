@@ -47,7 +47,7 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 1. 程序免安装，解压后即可使用。
 2. 如何启用语音识别分析？
     * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
-    * STT 模型
+    * STT 模型地址
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
     * 如何验证？播放一段音频，语音识别区应实时转写字幕。
 
@@ -59,14 +59,14 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
     * 权限检查：设置 -> 安全性与隐私 -> 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
 2. 如何启用语音识别分析？
-    * macOS 音频配置
+    1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
         2. 打开「音频 MIDI 设置」
         3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
         4. 将多输出设备设为系统默认输出
-    * STT 模型配置
+    2. STT 模型配置
         * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
-        * STT 模型
+        * STT 模型地址
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
         * 如何验证？播放一段音频，语音识别区应实时转写字幕。
 
