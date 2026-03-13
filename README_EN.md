@@ -1,10 +1,20 @@
-# Shadow AI
+<div align="center">
+
+<h1>Shadow AI: an AI assistant tool designed specifically for restricted environments</h1>
+  <p>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
+  </p>
+
+[中文](README.md) | **English**
+
+</div>
+
+## Features
 
 Shadow AI is an AI assistant tool designed specifically for restricted environments. It provides a stealthy operation
 mode without windows or traces, and enables cross-device AI Q&A interaction and control via the local area network (
 LAN).
-
-## Features
 
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
