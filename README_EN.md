@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Shadow AI: AI Assistant Tool Designed for Restricted Environments</h1>
+<h1>Shadow AI: Designed for Restricted Environments</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
