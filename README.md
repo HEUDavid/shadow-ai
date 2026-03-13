@@ -5,11 +5,10 @@
     <img src="https://img.shields.io/badge/Support-Windows-green" alt="OS">
     <img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS">
   </p>
+
 **中文**  | [English](README_EN.md)
 
 </div>
-
----
 
 ## 特点
 
