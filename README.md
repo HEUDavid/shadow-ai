@@ -2,8 +2,8 @@
 
 <h1>Shadow AI: 专为受限定环境设计的 AI 辅助工具</h1>
   <p>
-    <img src="https://img.shields.io/badge/Support-Windows-green" alt="OS">
-    <img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS">
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
   </p>
 
 **中文** | [English](README_EN.md)
