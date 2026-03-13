@@ -1,0 +1,90 @@
+# Shadow AI
+
+Shadow AI is an AI assistant tool designed specifically for restricted environments. It provides a stealthy operation
+mode without windows or traces, and enables cross-device AI Q&A interaction and control via the local area network (
+LAN).
+
+## Features
+
+- **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
+- **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
+- **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
+- **Major AI Services: Supports login for "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" with fast and stable
+  performance.**
+- **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
+
+## Interface
+
+![Welcome](screenshots/welcome.webp "Welcome")
+
+| <img alt="Image Analysis Example" height="700px" src="screenshots/vlm-question.webp" title="Image Question"/> | <img alt="AI Answer Example" height="700px" src="screenshots/vlm-answer.jpg" title="AI Answer"/> |
+|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+
+<details><summary><strong>AI Settings</strong></summary>
+
+**Multi-Channel Support** Supports AI tools like "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
+models.
+
+![Login Authentication](screenshots/auth.webp "Login Authentication")
+
+**Test Models** Click to add a model to custom AI, then test whether the model is working properly.
+
+![Test AI](screenshots/test-ai.webp "Test AI")
+
+**Switch Models** You can specify different models for visual (screenshot analysis) and audio (voice Q&A). Selecting
+multiple models enables concurrent queries, displaying the fastest response.
+
+![Configure AI](screenshots/default-model.webp "Configure Default AI Service")
+
+**Prompts** Set system prompts tailored to your custom application scenarios.
+
+![Set Prompts](screenshots/prompts.webp "Set Prompts")
+
+</details>
+
+## Feedback & Community
+
+<details><summary><strong>Telegram</strong></summary>
+https://t.me/shadow_ai_group
+</details>
+
+## FAQ
+
+<details><summary><strong>Windows</strong></summary>
+
+1. The program is installation-free; simply unzip and use.
+2. How to enable voice recognition analysis?
+    * Download and unzip the STT model, then configure the voice transcription model path in the settings.
+    * STT Model URL
+      `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+    * How to verify? Play an audio clip, and the voice recognition area should display real-time transcribed subtitles.
+
+</details>
+
+<details><summary><strong>MacOS</strong></summary>
+
+1. How to enable screenshot analysis?
+    * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
+    * Restart the software after granting permission.
+      ![Screenshot Permission](screenshots/screenshot-permission.png "Screenshot Permission")
+2. How to enable voice recognition analysis?
+    1. macOS Audio Configuration
+        1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
+        2. Open "Audio MIDI Setup".
+        3. Create a "Multi-Output Device" and check "Built-in Output" + "BlackHole 2ch".
+        4. Set the Multi-Output Device as the default system output.
+    2. STT Model Configuration
+        * Download and unzip the STT model, then configure the voice transcription model path in the settings.
+        * STT Model URL
+          `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+        * How to verify? Play an audio clip, and the voice recognition area should display real-time transcribed
+          subtitles.
+
+</details>
+
+## Disclaimer
+
+This project is intended for technical communication and learning purposes only. Please use this software in strict
+compliance with local laws and regulations, institutional rules, and platform agreements. The user bears full
+responsibility for any legal violations, disciplinary actions, and legal disputes arising from the misuse of this
+project. The developers assume no direct or indirect responsibility.
