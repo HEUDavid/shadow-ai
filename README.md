@@ -6,7 +6,7 @@
     <img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS">
   </p>
 
-**中文**  | [English](README_EN.md)
+**中文** | [English](README_EN.md)
 
 </div>
 
