@@ -1,3 +1,20 @@
+<div align="center">
+
+<h1>Shadow AI: 一款隐蔽的 AI 工具</h1>
+
+  <p>
+    <img src="https://img.shields.io/badge/Support-Windows-green" alt="OS">
+    <img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS">
+    <br>
+    <a href="https://picoclaw.io"><img src="https://img.shields.io/badge/Website-mdavid.cn-blue?style=flat&logo=google-chrome&logoColor=white" alt="Website"></a>
+  </p>
+
+**中文**  | [English](README_EN.md)
+
+</div>
+
+---
+
 # Shadow AI
 
 Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗口、无痕迹的隐蔽运行方式，并通过局域网实现跨设备的 AI
