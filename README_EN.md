@@ -19,7 +19,7 @@ LAN).
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
 - **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
-- **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi", FAST and STABLE.**
+- **Major AI Services: Support "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi", FAST and STABLE.**
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 
 ## Interface
