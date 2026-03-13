@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Shadow AI</h1>
+<h1>Shadow AI: AI Assistant Tool Designed for Restricted Environments</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
@@ -19,8 +19,7 @@ LAN).
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
 - **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
-- **Major AI Services: Supports login for "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" with fast and stable
-  performance.**
+- **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi", FAST and STABLE.**
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 
 ## Interface
