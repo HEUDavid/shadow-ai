@@ -56,8 +56,8 @@ multiple models enables concurrent queries, displaying the fastest response.
 
 ## Feedback & Community
 
-This project is under iterative development. If you have any "bug reports, feature requests, or usage questions", please
-feel free to join our group and provide feedback.
+This project is under iterative development. If you have any **bug reports, feature requests, or usage questions**,
+please feel free to join our group and provide feedback.
 
 <details><summary><strong>Telegram</strong></summary>
 https://t.me/shadow_ai_group
