@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow AI — 专为受限定环境设计的 AI 辅助工具</title>
+  <meta name="description" content="Shadow AI: 隐蔽运行、跨端操作、标准接口，专为受限定环境设计的 AI 辅助工具。">
+  <link rel="icon" href="screenshots/app_icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+    :root {
+      --bg-card:    rgba(10, 20, 34, 0.75);
+      --bg-card-h:  rgba(16, 30, 50, 0.88);
+      --border:     rgba(255, 255, 255, 0.10);
+      --border-h:   rgba(255, 255, 255, 0.22);
+      --text:       #e8eef6;
+      --text-muted: #8a9bb0;
+      --accent:     #58a6ff;
+      --accent-glow: rgba(88, 166, 255, 0.3);
+      --purple:     #a78bfa;
+      --green:      #34d399;
+      --orange:     #f59e0b;
+      --pink:       #f472b6;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(79, 124, 172, 0.30) 0%, transparent 44%),
+        radial-gradient(circle at 88% 18%, rgba(167, 139, 250, 0.15) 0%, transparent 36%),
+        radial-gradient(circle at 82% 90%, rgba(52, 211, 153, 0.12) 0%, transparent 38%),
+        linear-gradient(135deg, #0a0f1a, #0d1525 52%, #111d30);
+    }
+
+    body::before, body::after {
+      content: '';
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+    body::before {
+      width: 500px; height: 500px;
+      background: linear-gradient(45deg, #1a3a6a, #0e3060);
+      top: -150px; left: -150px;
+    }
+    body::after {
+      width: 550px; height: 550px;
+      background: linear-gradient(45deg, #3b1a6a, #6030a0);
+      bottom: -250px; right: -180px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── LANG TOGGLE ────────────────────────────────────────── */
+    .lang-toggle {
+      position: fixed;
+      top: 20px; right: 24px;
+      display: flex;
+      gap: 2px;
+      background: rgba(10, 20, 34, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .lang-btn {
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      font-family: inherit;
+    }
+    .lang-btn.active { background: var(--border-h); color: var(--text); }
+    .lang-btn:hover:not(.active) { color: var(--text); }
+
+    /* ─── HEADER / HERO ──────────────────────────────────────── */
+    header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 100px 20px 70px;
+    }
+
+    .logo-wrap {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+    .logo-wrap img {
+      display: block;
+      height: clamp(80px, 14vw, 120px);
+      width: auto;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(88, 166, 255, 0.15);
+    }
+
+    h1 {
+      position: relative; z-index: 1;
+      margin-top: 24px;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #e8eef6, #58a6ff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.3;
+    }
+
+    .tagline {
+      position: relative; z-index: 1;
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .header-actions {
+      position: relative; z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .badge-link { display: inline-flex; text-decoration: none; }
+    .badge-link img { display: block; border-radius: 4px; }
+
+    .header-buttons {
+      position: relative; z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s, border-color .2s, background .2s, color .2s;
+      backdrop-filter: blur(6px);
+    }
+    .btn-hero:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 24px var(--accent-glow);
+      text-decoration: none;
+    }
+    .btn-hero--primary {
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(167, 139, 250, 0.15));
+      border-color: rgba(88, 166, 255, 0.35);
+    }
+
+    /* ─── SECTION COMMON ─────────────────────────────────────── */
+    .section {
+      position: relative; z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .section-label {
+      text-align: center;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 40px;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--purple));
+      border-radius: 2px;
+      margin: 0 auto 40px;
+    }
+
+    /* ─── FEATURES ───────────────────────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .features-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 28px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color .22s, transform .22s cubic-bezier(.34, 1.4, .64, 1),
+                  box-shadow .22s, background .22s;
+      overflow: hidden;
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--c, var(--accent)), transparent);
+      opacity: 0;
+      transition: opacity .22s;
+    }
+    .feature-card:hover {
+      border-color: var(--c, var(--accent));
+      transform: translateY(-6px);
+      background: var(--bg-card-h);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, .4), 0 0 0 1px var(--c, var(--accent));
+    }
+    .feature-card:hover::before { opacity: .8; }
+
+    .feature-icon {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── SCREENSHOTS ────────────────────────────────────────── */
+    .screenshots-container {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .screenshot-main {
+      width: 100%;
+      max-width: 700px;
+    }
+    .screenshot-main img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .screenshot-main img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 30px rgba(88, 166, 255, 0.1);
+    }
+
+    .screenshot-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      width: 100%;
+    }
+
+    .screenshot-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color .22s, transform .22s, box-shadow .22s;
+    }
+    .screenshot-card:hover {
+      border-color: var(--border-h);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .4);
+    }
+    .screenshot-card img {
+      width: 100%;
+      display: block;
+    }
+    .screenshot-card .caption {
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ─── DOWNLOAD ───────────────────────────────────────────── */
+    .download-grid {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .os-card {
+      --c: var(--accent);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 36px 34px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color .22s, transform .22s cubic-bezier(.34, 1.4, .64, 1),
+                  box-shadow .22s, background .22s;
+      outline: none;
+      gap: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-decoration: none;
+      min-width: 180px;
+    }
+    .os-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--c) 50%, transparent 100%);
+      opacity: 0;
+      transition: opacity .22s;
+    }
+    .os-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(ellipse at 50% -10%, var(--c) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity .22s;
+      pointer-events: none;
+    }
+    .os-card:hover {
+      border-color: var(--c);
+      transform: translateY(-8px);
+      background: var(--bg-card-h);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, .45), 0 0 0 1px var(--c), 0 0 30px -8px var(--c);
+      text-decoration: none;
+    }
+    .os-card:hover::before { opacity: .7; }
+    .os-card:hover::after  { opacity: .06; }
+
+    .os-icon {
+      position: relative; z-index: 1;
+      width: 54px; height: 54px;
+      transition: transform .22s cubic-bezier(.34, 1.4, .64, 1);
+    }
+    .os-card:hover .os-icon { transform: scale(1.12); }
+
+    .os-name { position: relative; z-index: 1; font-size: 1.05rem; font-weight: 600; color: var(--text); }
+    .os-sub  { position: relative; z-index: 1; font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; }
+
+    .os-arrow {
+      position: absolute;
+      bottom: 13px; right: 13px;
+      z-index: 1;
+      color: var(--c);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity .18s, transform .18s;
+    }
+    .os-card:hover .os-arrow { opacity: .65; transform: translateX(0); }
+
+    /* ─── COMMUNITY ──────────────────────────────────────────── */
+    .community-card {
+      max-width: 480px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 24px 28px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color .22s, transform .22s, box-shadow .22s;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .community-card:hover {
+      border-color: rgba(88, 166, 255, 0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, .35);
+      text-decoration: none;
+    }
+    .community-icon {
+      width: 48px; height: 48px;
+      flex-shrink: 0;
+    }
+    .community-info { flex: 1; }
+    .community-name { font-size: 1rem; font-weight: 600; }
+    .community-desc { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-sep { color: var(--border-h); }
+
+    /* ─── ANIMATIONS ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Initial hero animations (no scroll needed) */
+    .hero-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: revealUp 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .d1 { animation-delay: 80ms; }
+    .d2 { animation-delay: 200ms; }
+    .d3 { animation-delay: 320ms; }
+    .d4 { animation-delay: 440ms; }
+
+    @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .hero-reveal { animation: none; opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ─── SCROLLBAR ──────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0a0f1a; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+
+  <!-- Language Toggle -->
+  <div class="lang-toggle" id="lang-toggle">
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn active" data-lang="zh">中文</button>
+  </div>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+  <header>
+    <div class="logo-wrap hero-reveal d1">
+      <img src="screenshots/app_icon.png" alt="Shadow AI">
+    </div>
+
+    <h1 class="hero-reveal d2" data-i18n="title">Shadow AI</h1>
+    <p class="tagline hero-reveal d2" data-i18n="tagline">专为受限定环境设计的 AI 辅助工具</p>
+
+    <div class="header-actions hero-reveal d3">
+      <a class="badge-link" href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/github/v/release/HEUDavid/shadow-ai?style=flat-square&logo=github&color=58a6ff&labelColor=0d1117&logoColor=white" alt="Latest Release" height="24">
+      </a>
+      <a class="badge-link" href="https://github.com/HEUDavid/shadow-ai" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/github/stars/HEUDavid/shadow-ai?style=flat-square&logo=github&color=f5a623&labelColor=0d1117&logoColor=white" alt="GitHub Stars" height="24">
+      </a>
+    </div>
+
+    <div class="header-buttons hero-reveal d4">
+      <a class="btn-hero btn-hero--primary" href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        <span data-i18n="btn-download">立即下载</span>
+      </a>
+      <a class="btn-hero" href="https://github.com/HEUDavid/shadow-ai" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span data-i18n="btn-github">GitHub 仓库</span>
+      </a>
+      <a class="btn-hero" href="https://t.me/shadow_ai_group" target="_blank" rel="noopener noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        <span data-i18n="btn-telegram">Telegram</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ═══ FEATURES ═══════════════════════════════════════════ -->
+  <section class="section reveal" id="features">
+    <p class="section-label" data-i18n="features-label">核心功能</p>
+    <h2 class="section-title" data-i18n="features-title">为什么选择 Shadow AI？</h2>
+    <div class="section-divider"></div>
+
+    <div class="features-grid">
+      <div class="feature-card" style="--c: var(--accent);">
+        <div class="feature-icon" style="background: rgba(88, 166, 255, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/><line x1="1" y1="1" x2="23" y2="23" stroke="#58a6ff" stroke-width="2"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f1-title">隐蔽运行</div>
+        <div class="feature-desc" data-i18n="f1-desc">支持目标设备后台静默运行，无前端窗口，无痕迹</div>
+      </div>
+
+      <div class="feature-card" style="--c: var(--purple);">
+        <div class="feature-icon" style="background: rgba(167, 139, 250, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f2-title">跨端操作</div>
+        <div class="feature-desc" data-i18n="f2-desc">通过局域网，支持手机或平板等设备远程接管控制</div>
+      </div>
+
+      <div class="feature-card" style="--c: var(--green);">
+        <div class="feature-icon" style="background: rgba(52, 211, 153, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f3-title">标准接口</div>
+        <div class="feature-desc" data-i18n="f3-desc">兼容标准 OpenAI API 规范，支持第三方接入</div>
+      </div>
+
+      <div class="feature-card" style="--c: var(--orange);">
+        <div class="feature-icon" style="background: rgba(245, 158, 11, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f4-title">大厂 AI 服务</div>
+        <div class="feature-desc" data-i18n="f4-desc">支持千问、OpenAI、Claude、Gemini、Antigravity、Kimi，极速稳定</div>
+      </div>
+
+      <div class="feature-card" style="--c: var(--pink);">
+        <div class="feature-icon" style="background: rgba(244, 114, 182, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f472b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/><path d="M16 16l-4-4-4 4"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f5-title">并发与路由</div>
+        <div class="feature-desc" data-i18n="f5-desc">支持多账号登录与并发请求，显示最快的回答</div>
+      </div>
+
+      <div class="feature-card" style="--c: #06b6d4;">
+        <div class="feature-icon" style="background: rgba(6, 182, 212, 0.12);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <div class="feature-title" data-i18n="f6-title">语音识别</div>
+        <div class="feature-desc" data-i18n="f6-desc">支持实时语音转写，配合视觉分析实现多模态交互</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SCREENSHOTS ════════════════════════════════════════ -->
+  <section class="section reveal" id="screenshots">
+    <p class="section-label" data-i18n="screenshots-label">产品界面</p>
+    <h2 class="section-title" data-i18n="screenshots-title">简洁优雅的界面</h2>
+    <div class="section-divider"></div>
+
+    <div class="screenshots-container">
+      <div class="screenshot-main">
+        <img src="screenshots/welcome.webp" alt="Shadow AI Welcome" data-i18n-alt="ss-welcome-alt">
+      </div>
+
+      <div class="screenshot-row">
+        <div class="screenshot-card">
+          <img src="screenshots/vlm-question.webp" alt="Image Analysis" data-i18n-alt="ss-vlm-q-alt">
+          <div class="caption" data-i18n="ss-vlm-q">图片提问</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/vlm-answer.jpg" alt="AI Answer" data-i18n-alt="ss-vlm-a-alt">
+          <div class="caption" data-i18n="ss-vlm-a">AI 回答</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/auth.webp" alt="Login Auth" data-i18n-alt="ss-auth-alt">
+          <div class="caption" data-i18n="ss-auth">登录认证</div>
+        </div>
+        <div class="screenshot-card">
+          <img src="screenshots/test-ai.webp" alt="Test AI" data-i18n-alt="ss-test-alt">
+          <div class="caption" data-i18n="ss-test">测试 AI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ DOWNLOAD ═══════════════════════════════════════════ -->
+  <section class="section reveal" id="download">
+    <p class="section-label" data-i18n="download-label">获取软件</p>
+    <h2 class="section-title" data-i18n="download-title">选择你的平台</h2>
+    <div class="section-divider"></div>
+
+    <div class="download-grid">
+      <a class="os-card" style="--c: #b0b0b5;" href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank" rel="noopener noreferrer">
+        <svg class="os-icon" viewBox="0 0 24 24" fill="#b0b0b5">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+        </svg>
+        <div class="os-name">macOS</div>
+        <div class="os-sub" data-i18n="dl-macos-sub">Apple Silicon / Intel</div>
+        <div class="os-arrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+
+      <a class="os-card" style="--c: #0a84ff;" href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank" rel="noopener noreferrer">
+        <svg class="os-icon" viewBox="0 0 24 24" fill="#0a84ff">
+          <path d="M3 5L10.5 3.9V11H3zM11.5 3.7L21 2.5V11H11.5zM3 12H10.5V20.1L3 19zM11.5 12H21V21.5L11.5 20.3z"/>
+        </svg>
+        <div class="os-name">Windows</div>
+        <div class="os-sub" data-i18n="dl-win-sub">x86_64 (64-bit)</div>
+        <div class="os-arrow">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ COMMUNITY ══════════════════════════════════════════ -->
+  <section class="section reveal" id="community">
+    <p class="section-label" data-i18n="community-label">反馈交流</p>
+    <h2 class="section-title" data-i18n="community-title">加入社区</h2>
+    <div class="section-divider"></div>
+
+    <a class="community-card" href="https://t.me/shadow_ai_group" target="_blank" rel="noopener noreferrer">
+      <svg class="community-icon" viewBox="0 0 24 24" fill="#58a6ff">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+      <div class="community-info">
+        <div class="community-name" data-i18n="tg-name">Telegram 群组</div>
+        <div class="community-desc" data-i18n="tg-desc">加入社区，获取帮助与最新动态</div>
+      </div>
+    </a>
+  </section>
+
+  <!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://github.com/HEUDavid/shadow-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/HEUDavid/shadow-ai/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer-releases">所有版本</a>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com/HEUDavid/shadow-ai/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer-issues">问题反馈</a>
+      <span class="footer-sep">·</span>
+      <a href="https://t.me/shadow_ai_group" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+    <div id="footer-credit" data-i18n-html="footer-credit">Shadow AI 仅供技术交流与学习使用</div>
+  </footer>
+
+  <script>
+    // ── i18n ──────────────────────────────────────────────────
+    const TRANSLATIONS = {
+      en: {
+        'title':             'Shadow AI',
+        'tagline':           'AI Assistant Designed for Restricted Environments',
+        'btn-download':      'Download Now',
+        'btn-github':        'GitHub Repo',
+        'btn-telegram':      'Telegram',
+        'features-label':    'Core Features',
+        'features-title':    'Why Shadow AI?',
+        'f1-title':          'Stealth Mode',
+        'f1-desc':           'Runs silently in the background on target devices — no window, no trace',
+        'f2-title':          'Cross-Device',
+        'f2-desc':           'Remote control via LAN using smartphones or tablets',
+        'f3-title':          'Standard API',
+        'f3-desc':           'Compatible with OpenAI API specification for third-party integration',
+        'f4-title':          'Major AI Services',
+        'f4-desc':           'Supports Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi — fast and stable',
+        'f5-title':          'Concurrency & Routing',
+        'f5-desc':           'Multi-account login with concurrent requests, showing the fastest response',
+        'f6-title':          'Voice Recognition',
+        'f6-desc':           'Real-time speech-to-text with visual analysis for multimodal interaction',
+        'screenshots-label': 'Interface',
+        'screenshots-title': 'Clean & Elegant Design',
+        'ss-vlm-q':          'Image Question',
+        'ss-vlm-a':          'AI Answer',
+        'ss-auth':           'Login Auth',
+        'ss-test':           'Test AI',
+        'download-label':    'Get Started',
+        'download-title':    'Choose Your Platform',
+        'dl-macos-sub':      'Apple Silicon / Intel',
+        'dl-win-sub':        'x86_64 (64-bit)',
+        'community-label':   'Community',
+        'community-title':   'Join the Community',
+        'tg-name':           'Telegram Group',
+        'tg-desc':           'Join the community for help and latest updates',
+        'footer-releases':   'All Releases',
+        'footer-issues':     'Issues',
+        'footer-credit':     'Shadow AI is for technical communication and learning purposes only',
+      },
+      zh: {
+        'title':             'Shadow AI',
+        'tagline':           '专为受限定环境设计的 AI 辅助工具',
+        'btn-download':      '立即下载',
+        'btn-github':        'GitHub 仓库',
+        'btn-telegram':      'Telegram',
+        'features-label':    '核心功能',
+        'features-title':    '为什么选择 Shadow AI？',
+        'f1-title':          '隐蔽运行',
+        'f1-desc':           '支持目标设备后台静默运行，无前端窗口，无痕迹',
+        'f2-title':          '跨端操作',
+        'f2-desc':           '通过局域网，支持手机或平板等设备远程接管控制',
+        'f3-title':          '标准接口',
+        'f3-desc':           '兼容标准 OpenAI API 规范，支持第三方接入',
+        'f4-title':          '大厂 AI 服务',
+        'f4-desc':           '支持千问、OpenAI、Claude、Gemini、Antigravity、Kimi，极速稳定',
+        'f5-title':          '并发与路由',
+        'f5-desc':           '支持多账号登录与并发请求，显示最快的回答',
+        'f6-title':          '语音识别',
+        'f6-desc':           '支持实时语音转写，配合视觉分析实现多模态交互',
+        'screenshots-label': '产品界面',
+        'screenshots-title': '简洁优雅的界面',
+        'ss-vlm-q':          '图片提问',
+        'ss-vlm-a':          'AI 回答',
+        'ss-auth':           '登录认证',
+        'ss-test':           '测试 AI',
+        'download-label':    '获取软件',
+        'download-title':    '选择你的平台',
+        'dl-macos-sub':      'Apple Silicon / Intel',
+        'dl-win-sub':        'x86_64 (64-bit)',
+        'community-label':   '反馈交流',
+        'community-title':   '加入社区',
+        'tg-name':           'Telegram 群组',
+        'tg-desc':           '加入社区，获取帮助与最新动态',
+        'footer-releases':   '所有版本',
+        'footer-issues':     '问题反馈',
+        'footer-credit':     'Shadow AI 仅供技术交流与学习使用',
+      },
+    };
+
+    function detectLang() {
+      const saved = localStorage.getItem('shadow-ai-lang');
+      if (saved && TRANSLATIONS[saved]) return saved;
+      return navigator.language.startsWith('zh') ? 'zh' : 'en';
+    }
+
+    let currentLang = detectLang();
+
+    function t(key) {
+      return (TRANSLATIONS[currentLang] || TRANSLATIONS.en)[key]
+          ?? TRANSLATIONS.en[key]
+          ?? key;
+    }
+
+    function applyLang() {
+      document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+      // Update page title
+      document.title = currentLang === 'zh'
+        ? 'Shadow AI — 专为受限定环境设计的 AI 辅助工具'
+        : 'Shadow AI — AI Assistant for Restricted Environments';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const val = t(el.dataset.i18n);
+        if (typeof val === 'string' && val.includes('<')) el.innerHTML = val;
+        else if (typeof val === 'string') el.textContent = val;
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        el.innerHTML = t(el.dataset.i18nHtml);
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === currentLang);
+      });
+    }
+
+    function switchLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('shadow-ai-lang', lang);
+      applyLang();
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', e => {
+      const btn = e.target.closest('.lang-btn');
+      if (btn) switchLang(btn.dataset.lang);
+    });
+
+    applyLang();
+
+    // ── Scroll Reveal ────────────────────────────────────────
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
