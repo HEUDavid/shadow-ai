@@ -83,7 +83,7 @@ https://t.me/shadow_ai_group
     * Restart the software after granting permission.
       ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
 2. How to enable voice recognition analysis? (Optional Feature)
-    1. macOS Audio Configuration
+    1. MacOS Audio Configuration
         1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
         2. Open "Audio MIDI Setup".
         3. Create a "Multi-Output Device" and check "Built-in Output" + "BlackHole 2ch".

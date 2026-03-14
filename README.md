@@ -78,7 +78,7 @@ https://t.me/shadow_ai_group
     * 授予权限后，需要重启软件
       ![截图权限](assets/screenshot-permission.png "截图权限")
 2. 如何启用语音识别分析？（可选功能）
-    1. macOS 音频配置
+    1. MacOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
         2. 打开「音频 MIDI 设置」
         3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
