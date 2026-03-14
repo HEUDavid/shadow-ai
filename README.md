@@ -63,7 +63,7 @@ https://t.me/shadow_ai_group
 <details><summary><strong>Windows</strong></summary>
 
 1. 程序免安装，解压后即可使用。
-2. 如何启用语音识别分析？
+2. 如何启用语音识别分析？（可选功能）
     * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
     * STT 模型地址
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
@@ -77,7 +77,7 @@ https://t.me/shadow_ai_group
     * 权限检查：设置 → 安全性与隐私 → 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
       ![截图权限](assets/screenshot-permission.png "截图权限")
-2. 如何启用语音识别分析？
+2. 如何启用语音识别分析？（可选功能）
     1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
         2. 打开「音频 MIDI 设置」
