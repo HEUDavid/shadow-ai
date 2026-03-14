@@ -28,6 +28,21 @@
             --white: #d5cdcd;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+
+        /* Hide scrollbar for Chrome/Safari/Opera */
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
