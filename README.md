@@ -23,28 +23,28 @@ Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗
 
 ## 界面
 
-![欢迎使用](screenshots/welcome.webp "欢迎使用")
+![欢迎使用](assets/welcome.webp "欢迎使用")
 
-| <img alt="图片分析示例" height="700px" src="screenshots/vlm-question.webp" title="图片提问"/> | <img alt="AI 回答示例" height="700px" src="screenshots/vlm-answer.jpg" title="AI 回答"/> |
-|-------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
+| <img alt="图片分析示例" height="700px" src="assets/vlm-question.webp" title="图片提问"/> | <img alt="AI 回答示例" height="700px" src="assets/vlm-answer.jpg" title="AI 回答"/> |
+|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 
 <details><summary><strong>AI 设置</strong></summary>
 
 **多渠道支持** 支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」等 AI 工具作为后端大模型
 
-![登录认证](screenshots/auth.webp "登录认证")
+![登录认证](assets/auth.webp "登录认证")
 
 **测试模型** 点击添加模型到自定义 AI，然后测试模型是否正常工作
 
-![测试AI](screenshots/test-ai.webp "测试AI")
+![测试AI](assets/test-ai.webp "测试AI")
 
 **切换模型** 可以为视觉（截图分析）、音频（语音问答）指定不同的模型，多选则并发提问，然后显示最快的回答
 
-![配置AI](screenshots/default-model.webp "配置默认AI服务")
+![配置AI](assets/default-model.webp "配置默认AI服务")
 
 **提示词** 结合自定义应用场景，设置系统提示词
 
-![设置提示词](screenshots/prompts.webp "设置提示词")
+![设置提示词](assets/prompts.webp "设置提示词")
 
 </details>
 
@@ -72,7 +72,7 @@ https://t.me/shadow_ai_group
 1. 如何启用截图分析？
     * 权限检查：设置 → 安全性与隐私 → 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
-      ![截图权限](screenshots/screenshot-permission.png "截图权限")
+      ![截图权限](assets/screenshot-permission.png "截图权限")
 2. 如何启用语音识别分析？
     1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)

@@ -24,30 +24,30 @@ LAN).
 
 ## Interface
 
-![Welcome](screenshots/welcome.webp "Welcome")
+![Welcome](assets/welcome.webp "Welcome")
 
-| <img alt="Image Analysis Example" height="700px" src="screenshots/vlm-question.webp" title="Image Question"/> | <img alt="AI Answer Example" height="700px" src="screenshots/vlm-answer.jpg" title="AI Answer"/> |
-|---------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| <img alt="Image Analysis Example" height="700px" src="assets/vlm-question.webp" title="Image Question"/> | <img alt="AI Answer Example" height="700px" src="assets/vlm-answer.jpg" title="AI Answer"/> |
+|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 
 <details><summary><strong>AI Settings</strong></summary>
 
 **Multi-Channel Support** Supports AI tools like "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
 models.
 
-![Login Authentication](screenshots/auth.webp "Login Authentication")
+![Login Authentication](assets/auth.webp "Login Authentication")
 
 **Test Models** Click to add a model to custom AI, then test whether the model is working properly.
 
-![Test AI](screenshots/test-ai.webp "Test AI")
+![Test AI](assets/test-ai.webp "Test AI")
 
 **Switch Models** You can specify different models for visual (screenshot analysis) and audio (voice Q&A). Selecting
 multiple models enables concurrent queries, displaying the fastest response.
 
-![Configure AI](screenshots/default-model.webp "Configure Default AI Service")
+![Configure AI](assets/default-model.webp "Configure Default AI Service")
 
 **Prompts** Set system prompts tailored to your custom application scenarios.
 
-![Set Prompts](screenshots/prompts.webp "Set Prompts")
+![Set Prompts](assets/prompts.webp "Set Prompts")
 
 </details>
 
@@ -75,7 +75,7 @@ https://t.me/shadow_ai_group
 1. How to enable screenshot analysis?
     * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
     * Restart the software after granting permission.
-      ![Screenshot Permission](screenshots/screenshot-permission.png "Screenshot Permission")
+      ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
 2. How to enable voice recognition analysis?
     1. macOS Audio Configuration
         1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
