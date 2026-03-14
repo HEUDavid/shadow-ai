@@ -52,6 +52,8 @@ Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口
 
 ## 反馈交流
 
+本项目在迭代开发中，如果您有「BUG 反馈、功能需求、任何使用问题」欢迎加入群组进行反馈。
+
 <details><summary><strong>Telegram</strong></summary>
 https://t.me/shadow_ai_group
 </details>
