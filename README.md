@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>Shadow AI: 专为受限定环境设计的 AI 辅助工具</h1>
+<h1>Shadow AI: 专为受限环境设计的 AI 辅助工具</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
@@ -12,7 +12,7 @@
 
 ## 特点
 
-Shadow AI 是一款专为受限定环境设计的 AI 辅助工具。提供无窗口、无痕迹的隐蔽运行方式，并通过局域网实现跨设备的 AI
+Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口、无痕迹的隐蔽运行方式，并通过局域网实现跨设备的 AI
 问答交互与控制。
 
 - **隐蔽运行**：支持目标设备后台静默运行，无前端窗口
