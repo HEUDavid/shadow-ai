@@ -72,7 +72,9 @@ https://t.me/shadow_ai_group
     * Download and unzip the STT model, then configure the voice transcription model path in the settings.
     * STT Model URL
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-    * How to verify? Play an audio clip, and the voice recognition area should display real-time transcribed subtitles.
+    * How to verify?
+        * Play an audio clip; the speech recognition panel should transcribe subtitles in real time
+        * Note: The speech recognition should capture audio output (playback), not microphone input (recording)
 
 </details>
 
@@ -92,8 +94,9 @@ https://t.me/shadow_ai_group
         * Download and unzip the STT model, then configure the voice transcription model path in the settings.
         * STT Model URL
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-        * How to verify? Play an audio clip, and the voice recognition area should display real-time transcribed
-          subtitles.
+    3. How to verify?
+        * Play an audio clip; the speech recognition panel should transcribe subtitles in real time
+        * Note: The speech recognition should capture audio output (playback), not microphone input (recording)
 
 </details>
 
