@@ -85,19 +85,20 @@ https://t.me/shadow_ai_group
     * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
     * Restart the software after granting permission.
       ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
-2. How to enable voice recognition analysis? (Optional Feature)
+2. How do I enable speech recognition analysis? (Optional)
     1. MacOS Audio Configuration
         1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
         2. Open "Audio MIDI Setup".
         3. Create a "Multi-Output Device" and check "Built-in Output" + "BlackHole 2ch".
         4. Set the Multi-Output Device as the default system output.
     2. STT Model Configuration
-        * Download and unzip the STT model, then configure the voice transcription model path in the settings.
+        * Download and extract the STT model, then configure the speech recognition model path in Settings.
         * STT Model URL
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
     3. How to verify?
-        * Play an audio clip; the speech recognition panel should transcribe subtitles in real time
-        * Note: The speech recognition should capture audio output (playback), not microphone input (recording)
+        * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
+        * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
+          `microphone input (recording)`.
 
 </details>
 
