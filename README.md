@@ -86,12 +86,12 @@ https://t.me/shadow_ai_group
         3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
         4. 将多输出设备设为系统默认输出
     2. STT 模型配置
-        * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
+        * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
         * STT 模型地址
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
     3. 如何验证？
         * 播放一段音频，语音识别区应实时转写字幕
-        * 注意：语音识别音频输出（外放），而不是监听麦克风输入（录音）
+        * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`
 
 </details>
 
