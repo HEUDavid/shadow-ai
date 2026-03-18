@@ -67,14 +67,15 @@ https://t.me/shadow_ai_group
 
 <details><summary><strong>Windows</strong></summary>
 
-1. The program is installation-free; simply unzip and use.
-2. How to enable voice recognition analysis? (Optional Feature)
-    * Download and unzip the STT model, then configure the voice transcription model path in the settings.
+1. The program is installation-free; Just extract it and use it.
+2. How do I enable speech recognition analysis? (Optional)
+    * Download and extract the STT model, then configure the speech recognition model path in Settings.
     * STT Model URL
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
     * How to verify?
-        * Play an audio clip; the speech recognition panel should transcribe subtitles in real time
-        * Note: The speech recognition should capture audio output (playback), not microphone input (recording)
+        * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
+        * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
+          `microphone input (recording)`.
 
 </details>
 
