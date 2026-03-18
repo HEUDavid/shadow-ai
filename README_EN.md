@@ -68,7 +68,7 @@ https://t.me/shadow_ai_group
 <details><summary><strong>Windows</strong></summary>
 
 1. The program is installation-free; Just extract it and use it.
-2. How do I enable speech recognition analysis? (Optional)
+2. How to enable speech recognition analysis? (Optional)
     * Download and extract the STT model, then configure the speech recognition model path in Settings.
     * STT Model URL
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
@@ -85,7 +85,7 @@ https://t.me/shadow_ai_group
     * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
     * Restart the software after granting permission.
       ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
-2. How do I enable speech recognition analysis? (Optional)
+2. How to enable speech recognition analysis? (Optional)
     1. MacOS Audio Configuration
         1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
         2. Open "Audio MIDI Setup".
