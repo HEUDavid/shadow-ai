@@ -62,14 +62,14 @@ https://t.me/shadow_ai_group
 
 <details><summary><strong>Windows</strong></summary>
 
-1. 程序免安装，解压后即可使用。
+1. 程序免安装，解压即可使用。
 2. 如何启用语音识别分析？（可选功能）
-    * 下载 STT 模型并解压，然后在设置中配置语音转写模型路径
+    * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
     * STT 模型地址
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
     * 如何验证？
         * 播放一段音频，语音识别区应实时转写字幕
-        * 注意：语音识别音频输出（外放），而不是监听麦克风输入（录音）
+        * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`
 
 </details>
 
