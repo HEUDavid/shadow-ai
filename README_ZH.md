@@ -6,7 +6,7 @@
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
   </p>
 
-**中文** | [English](README_EN.md)
+**中文** | [English](README.md)
 
 </div>
 
