@@ -12,7 +12,7 @@
 
 ## Features
 
-Shadow AI is an AI assistant tool designed specifically for restricted environments. It provides a stealthy operation
+Shadow AI is an AI assistant designed specifically for restricted environments. It provides a stealthy operation
 mode without windows or traces, and enables cross-device AI Q&A interaction and control via the local area network (
 LAN).
 
