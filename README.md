@@ -1,100 +1,110 @@
 <div align="center">
 
-<h1>Shadow AI: 专为受限环境设计的 AI 辅助工具</h1>
+<h1>Shadow AI: Designed for Restricted Environments</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
   </p>
 
-**中文** | [English](README_EN.md)
+[中文](README.md) | **English**
 
 </div>
 
-## 特点
+## Features
 
-Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口、无痕迹的隐蔽运行方式，并通过局域网实现跨设备的 AI
-问答交互与控制。
+Shadow AI is an AI assistant tool designed specifically for restricted environments. It provides a stealthy operation
+mode without windows or traces, and enables cross-device AI Q&A interaction and control via the local area network (
+LAN).
 
-本质是一个「屏幕/音频采集 + AI 推理 + 低摩擦投送」的自动化协作层，帮助用户在受控设备/受限环境下沉浸式跨应用地使用 AI 助手。
+Essentially, it is an automated collaboration layer of "screen/audio capture + AI inference + low-friction delivery",
+helping users to immersively use AI assistants across applications on controlled devices or in restricted environments.
 
-- **隐蔽运行**：支持目标设备后台静默运行，无前端窗口
-- **跨端操作**：通过局域网，支持手机或平板等设备远程接管控制
-- **标准接口**：兼容标准 OpenAI API 规范的第三方接入
-- **大厂 AI 服务：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」登录，极速稳定**
-- **并发与路由**：支持多账号与并发
+- **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
+- **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
+- **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
+- **Major AI Services: Support "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi", FAST and STABLE.**
+- **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 
-## 界面
+## Interface
 
-![欢迎使用](assets/welcome.webp "欢迎使用")
+![Welcome](assets/welcome.webp "Welcome")
 
-| <img alt="图片分析示例" height="700px" src="assets/vlm-question.webp" title="图片提问"/> | <img alt="AI 回答示例" height="700px" src="assets/vlm-answer.jpg" title="AI 回答"/> |
-|--------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| <img alt="Image Analysis Example" height="700px" src="assets/vlm-question.webp" title="Image Question"/> | <img alt="AI Answer Example" height="700px" src="assets/vlm-answer.jpg" title="AI Answer"/> |
+|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|
 
-<details><summary><strong>AI 设置</strong></summary>
+<details><summary><strong>AI Settings</strong></summary>
 
-**多渠道支持** 支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」等 AI 工具作为后端大模型
+**Multi-Channel Support** Supports AI tools like "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
+models.
 
-![登录认证](assets/auth.webp "登录认证")
+![Login Authentication](assets/auth.webp "Login Authentication")
 
-**测试模型** 点击添加模型到自定义 AI，然后测试模型是否正常工作
+**Test Models** Click to add a model to custom AI, then test whether the model is working properly.
 
-![测试AI](assets/test-ai.webp "测试AI")
+![Test AI](assets/test-ai.webp "Test AI")
 
-**切换模型** 可以为视觉（截图分析）、音频（语音问答）指定不同的模型，多选则并发提问，然后显示最快的回答
+**Switch Models** You can specify different models for visual (screenshot analysis) and audio (voice Q&A). Selecting
+multiple models enables concurrent queries, displaying the fastest response.
 
-![配置AI](assets/default-model.webp "配置默认AI服务")
+![Configure AI](assets/default-model.webp "Configure Default AI Service")
 
-**提示词** 结合自定义应用场景，设置系统提示词
+**Prompts** Set system prompts tailored to your custom application scenarios.
 
-![设置提示词](assets/prompts.webp "设置提示词")
+![Set Prompts](assets/prompts.webp "Set Prompts")
 
 </details>
 
-## 反馈交流
+## Feedback & Community
 
-本项目在迭代开发中，如果您有**BUG 反馈、功能需求、任何使用问题**，欢迎加入群组进行反馈。
+This project is under iterative development. If you have any **bug reports, feature requests, or usage questions**,
+please feel free to join our group and provide feedback.
 
 <details><summary><strong>Telegram</strong></summary>
 https://t.me/shadow_ai_group
 </details>
 
-## 常见问题
+## FAQ
 
 <details><summary><strong>Windows</strong></summary>
 
-1. 程序免安装，解压即可使用。
-2. 如何启用语音识别分析？（可选功能）
-    * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
-    * STT 模型地址
+1. The program is installation-free; Just extract it and use it.
+2. How to enable speech recognition analysis? (Optional)
+    * Download and extract the STT model, then configure the speech recognition model path in Settings.
+    * STT Model URL
       `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-    * 如何验证？
-        * 播放一段音频，语音识别区应实时转写字幕
-        * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`
+    * How to verify?
+        * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
+        * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
+          `microphone input (recording)`.
 
 </details>
 
 <details><summary><strong>MacOS</strong></summary>
 
-1. 如何启用截图分析？
-    * 权限检查：设置 → 安全性与隐私 → 屏幕录制：允许本程序
-    * 授予权限后，需要重启软件
-      ![截图权限](assets/screenshot-permission.png "截图权限")
-2. 如何启用语音识别分析？（可选功能）
-    1. MacOS 音频配置
-        1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
-        2. 打开「音频 MIDI 设置」
-        3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
-        4. 将多输出设备设为系统默认输出
-    2. STT 模型配置
-        * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
-        * STT 模型地址
+1. How to enable screenshot analysis?
+    * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
+    * Restart the software after granting permission.
+      ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
+2. How to enable speech recognition analysis? (Optional)
+    1. MacOS Audio Configuration
+        1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
+        2. Open "Audio MIDI Setup".
+        3. Create a "Multi-Output Device" and check "Built-in Output" + "BlackHole 2ch".
+        4. Set the Multi-Output Device as the default system output.
+    2. STT Model Configuration
+        * Download and extract the STT model, then configure the speech recognition model path in Settings.
+        * STT Model URL
           `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
-    3. 如何验证？
-        * 播放一段音频，语音识别区应实时转写字幕
-        * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`
+    3. How to verify?
+        * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
+        * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
+          `microphone input (recording)`.
 
 </details>
 
-## 免责声明
+## Disclaimer
 
-本项目仅供技术交流与学习使用。请在严格遵守当地法律法规、机构规章及平台协议的前提下使用本软件。因滥用本项目产生的违规违法行为、纪律处分及法律纠纷，由使用者本人承担全部责任，开发者不承担任何直接或间接责任。
+This project is intended for technical communication and learning purposes only. Please use this software in strict
+compliance with local laws and regulations, institutional rules, and platform agreements. The user bears full
+responsibility for any legal violations, disciplinary actions, and legal disputes arising from the misuse of this
+project. The developers assume no direct or indirect responsibility.
