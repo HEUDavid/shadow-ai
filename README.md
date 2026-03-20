@@ -21,7 +21,7 @@ helping users to immersively use AI assistants across applications on controlled
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
 - **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
-- **Major AI Services: Support "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi", FAST and STABLE.**
+- **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 
 ## Interface
@@ -34,7 +34,7 @@ helping users to immersively use AI assistants across applications on controlled
 <details><summary><strong>AI Settings</strong></summary>
 
 **Multi-Channel Support** Supports AI tools like "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
-models.
+language models (LLMs).
 
 ![Login Authentication](assets/auth.webp "Login Authentication")
 
@@ -66,7 +66,7 @@ https://t.me/shadow_ai_group
 
 <details><summary><strong>Windows</strong></summary>
 
-1. The program is installation-free; Just extract it and use it.
+1. The program is installation-free; just extract it and use it.
 2. How to enable speech recognition analysis? (Optional)
     * Download and extract the STT model, then configure the speech recognition model path in Settings.
     * STT Model URL
