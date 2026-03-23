@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow AI — 专为受限环境设计的 AI 辅助工具</title>
-    <meta name="description" content="Shadow AI: 隐蔽运行、跨端操作、标准接口，专为受限环境设计的 AI 辅助工具。">
+    <meta name="description" content="Shadow AI: 隐蔽运行、跨端操作，专为受限环境设计的 AI 辅助工具">
     <link rel="icon" href="static/app_icon.png" type="image/png">
     <style>
         :root {
@@ -1010,13 +1010,13 @@
         // Update page title
         document.title = currentLang === 'zh'
             ? 'Shadow AI — 专为受限环境设计的 AI 辅助工具'
-            : 'Shadow AI — AI Assistant for Restricted Environments';
+            : 'Shadow AI — An AI Assistant Designed for Restricted Environments';
 
         const metaDesc = document.querySelector('meta[name="description"]');
         if (metaDesc) {
             metaDesc.content = currentLang === 'zh'
-                ? "Shadow AI: 隐蔽运行、跨端操作、标准接口，专为受限环境设计的 AI 辅助工具。"
-                : "Shadow AI: Stealth operation, cross-device control, standard API — an AI assistant designed for restricted environments.";
+                ? "Shadow AI: 隐蔽运行、跨端操作，专为受限环境设计的 AI 辅助工具"
+                : "Shadow AI: Stealth AI assistant for restricted/locked-down environments, enabling LAN cross-device interaction, screen & audio capture, real-time AI inference, and low-friction automation";
         }
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
