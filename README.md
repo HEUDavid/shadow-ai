@@ -20,8 +20,8 @@ helping users to immersively use AI assistants across applications on controlled
 
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
-- **Standard Interface**: Compatible with standard OpenAI API specifications for third-party integration.
 - **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
+- **Standard Interface**: Supports other AI services that follow the OpenAI API standard.
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 
 ## Interface
