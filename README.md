@@ -3,7 +3,7 @@
 <h1>Shadow AI: Designed for Restricted Environments</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
-    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-macOS-green" alt="OS"></a>
   </p>
 
 [中文](README_ZH.md) | **English**
@@ -78,14 +78,14 @@ https://t.me/shadow_ai_group
 
 </details>
 
-<details><summary><strong>MacOS</strong></summary>
+<details><summary><strong>macOS</strong></summary>
 
 1. How to enable screenshot analysis?
     * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
     * Restart the software after granting permission.
       ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
 2. How to enable speech recognition analysis? (Optional)
-    1. MacOS Audio Configuration
+    1. macOS Audio Configuration
         1. Install [BlackHole](https://github.com/ExistentialAudio/BlackHole).
         2. Open "Audio MIDI Setup".
         3. Create a "Multi-Output Device" and check "Built-in Output" + "BlackHole 2ch".

@@ -3,7 +3,7 @@
 <h1>Shadow AI: 专为受限环境设计的 AI 辅助工具</h1>
   <p>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
-    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-MacOS-green" alt="OS"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-macOS-green" alt="OS"></a>
   </p>
 
 **中文** | [English](README.md)
@@ -73,14 +73,14 @@ https://t.me/shadow_ai_group
 
 </details>
 
-<details><summary><strong>MacOS</strong></summary>
+<details><summary><strong>macOS</strong></summary>
 
 1. 如何启用截图分析？
     * 权限检查：设置 → 安全性与隐私 → 屏幕录制：允许本程序
     * 授予权限后，需要重启软件
       ![截图权限](assets/screenshot-permission.png "截图权限")
 2. 如何启用语音识别分析？（可选功能）
-    1. MacOS 音频配置
+    1. macOS 音频配置
         1. 安装 [BlackHole](https://github.com/ExistentialAudio/BlackHole)
         2. 打开「音频 MIDI 设置」
         3. 创建「多输出设备」，勾选内建输出 + BlackHole 2ch
