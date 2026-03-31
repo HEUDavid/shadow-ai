@@ -31,24 +31,10 @@ jobs:
           app-name: ${{ matrix.app-name }}
           token: ${{ secrets.SOURCE_REPO_PAT }}
 
-    outputs:
-      version: ${{ steps.build.outputs.version }}
-
-  release:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-          merge-multiple: true
-
       - uses: softprops/action-gh-release@v2
         with:
-          name: Release v${{ needs.build.outputs.version }}
-          tag_name: v${{ needs.build.outputs.version }}
+          name: Release v${{ steps.build.outputs.version }}
+          tag_name: v${{ steps.build.outputs.version }}
           files: |
-            artifacts/*.dmg
-            artifacts/*.zip
+            build/*.dmg
+            build/*.zip
