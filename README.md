@@ -89,7 +89,7 @@ please feel free to join our group and provide feedback.
 
 1. How to enable screenshot analysis?
     * Permission Check: Settings → Privacy & Security → Screen Recording: Allow this application.
-    * Restart the software after granting permission.
+    * <span style="color:red">Restart the software after granting permission.</span>
       ![Screenshot Permission](assets/screenshot-permission.png "Screenshot Permission")
 2. How to enable speech recognition analysis? (Optional)
     1. macOS Audio Configuration
