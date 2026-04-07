@@ -22,6 +22,7 @@ Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口
 - **大厂 AI 服务：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」登录，极速稳定**
 - **标准接口**：支持其他 OpenAI API 规范的 AI 服务
 - **并发与路由**：支持多账号与并发
+- **多语言支持**：语音识别支持中文、英文、中英双语（其他语言正在支持中），可根据语言场景选择 STT 模型
 
 ## 界面
 
@@ -65,8 +66,11 @@ https://t.me/shadow_ai_group
 1. 程序免安装，解压即可使用。
 2. 如何启用语音识别分析？（可选功能）
     * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
-    * STT 模型地址
-      `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+    * STT 模型下载地址：
+        * [Zipformer 中文](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
+        * [Zipformer 英文](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
+        * [Zipformer 中英双语](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
+        * [Paraformer 中英双语](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2)
     * 如何验证？
         * 播放一段音频，语音识别区应实时转写字幕
         * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`
@@ -87,8 +91,11 @@ https://t.me/shadow_ai_group
         4. 将多输出设备设为系统默认输出
     2. STT 模型配置
         * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
-        * STT 模型地址
-          `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+        * STT 模型下载地址：
+            * [Zipformer 中文](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
+            * [Zipformer 英文](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
+            * [Zipformer 中英双语](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
+            * [Paraformer 中英双语](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2)
     3. 如何验证？
         * 播放一段音频，语音识别区应实时转写字幕
         * 注意：语音识别分析的是`系统音频输出（外放）`，不监听`麦克风输入（录音）`

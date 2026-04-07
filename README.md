@@ -23,6 +23,8 @@ helping users to immersively use AI assistants across applications on controlled
 - **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
 - **Standard Interface**: Supports other AI services that follow the OpenAI API standard.
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
+- **Multi-Language Support**: Speech recognition supports Chinese, English, and bilingual Chinese–English (more
+  languages are being added). Choose the appropriate STT model based on your use case.
 
 ## Interface
 
@@ -69,8 +71,11 @@ https://t.me/shadow_ai_group
 1. The program is installation-free; just extract it and use it.
 2. How to enable speech recognition analysis? (Optional)
     * Download and extract the STT model, then configure the speech recognition model path in Settings.
-    * STT Model URL
-      `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+    * STT Model URLs:
+        * [Zipformer Chinese](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
+        * [Zipformer English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
+        * [Zipformer Bilingual Chinese-English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
+        * [Paraformer Bilingual Chinese-English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2)
     * How to verify?
         * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
         * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
@@ -92,8 +97,11 @@ https://t.me/shadow_ai_group
         4. Set the Multi-Output Device as the default system output.
     2. STT Model Configuration
         * Download and extract the STT model, then configure the speech recognition model path in Settings.
-        * STT Model URL
-          `https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2`
+        * STT Model URLs:
+            * [Zipformer Chinese](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
+            * [Zipformer English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
+            * [Zipformer Bilingual Chinese-English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
+            * [Paraformer Bilingual Chinese-English](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2)
     3. How to verify?
         * Play an audio clip. The speech recognition panel should transcribe subtitles in real time.
         * Note: Speech recognition analyzes the `system audio output (speaker playback)`, not the
