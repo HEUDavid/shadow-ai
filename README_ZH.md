@@ -69,9 +69,9 @@ Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口
 2. 如何启用语音识别分析？（可选功能）
     * 下载 STT 模型并解压，然后在设置中配置语音识别模型路径
     * STT 模型下载地址：
-        * [Zipformer 中文(仅中文，准确率挺好)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
-        * [Zipformer 英文(仅英文，准确率非常好)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
-        * [Zipformer 中英双语(双语夹杂准确率会降低)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
+        * [Zipformer 中文(仅中文场景，准确率挺好)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-zh-2025-06-30.tar.bz2)
+        * [Zipformer 英文(仅英文场景，准确率非常好)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-en-2023-06-26.tar.bz2)
+        * [Zipformer 中英双语(双语版本比单语言版本准确率要差一些)](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20.tar.bz2)
         * [Paraformer 中英双语](https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-streaming-paraformer-bilingual-zh-en.tar.bz2)
     * 如何验证？
         * 播放一段音频，语音识别区应实时转写字幕
