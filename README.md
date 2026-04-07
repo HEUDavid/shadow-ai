@@ -61,7 +61,9 @@ This project is under iterative development. If you have any **bug reports, feat
 please feel free to join our group and provide feedback.
 
 <details><summary><strong>Telegram</strong></summary>
-https://t.me/shadow_ai_group
+
+> - [Join our Telegram](https://t.me/shadow_ai_group) and DM me
+
 </details>
 
 ## FAQ
