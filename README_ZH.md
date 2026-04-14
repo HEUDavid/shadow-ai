@@ -2,8 +2,12 @@
 
 <h1>Shadow AI: 专为受限环境设计的 AI 辅助工具</h1>
   <p>
-    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-Windows-green" alt="OS"></a>
-    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest"><img src="https://img.shields.io/badge/Support-macOS-green" alt="OS"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases" target="_blank">
+        <img src="https://img.shields.io/github/v/release/HEUDavid/shadow-ai?color=c351e3&style=flat-square"
+             alt="Releases"></a>
+    <a href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank">
+        <img src="https://img.shields.io/badge/Support-Windows, macOS-0969da?style=flat-square"
+             alt="Support OS"></a>
   </p>
 
 **中文** | [English](README.md)
