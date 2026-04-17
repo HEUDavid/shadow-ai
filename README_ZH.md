@@ -23,7 +23,7 @@ Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口
 
 - **隐蔽运行**：支持目标设备后台静默运行，无前端窗口
 - **跨端操作**：通过局域网，支持手机或平板等设备远程接管控制
-- **大厂 AI 服务：支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」登录，极速稳定**
+- **大厂 AI 服务：支持「OpenAI、Claude、Gemini、Antigravity、Kimi」登录，极速稳定**
 - **标准接口**：支持其他 OpenAI API 规范的 AI 服务
 - **并发与路由**：支持多账号与并发
 - **多语言支持**：语音识别支持中文、英文、中英双语（其他语言正在支持中），可根据语言场景选择 STT 模型
@@ -37,7 +37,7 @@ Shadow AI 是一款专为受限环境设计的 AI 辅助工具。提供无窗口
 
 <details><summary><strong>AI 设置</strong></summary>
 
-**多渠道支持** 支持「千问、OpenAI、Claude、Gemini、Antigravity、Kimi」等 AI 工具作为后端大模型
+**多渠道支持** 支持「OpenAI、Claude、Gemini、Antigravity、Kimi」等 AI 工具作为后端大模型
 
 ![登录认证](assets/auth.webp "登录认证")
 

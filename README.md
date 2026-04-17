@@ -24,7 +24,7 @@ helping users to immersively use AI assistants across applications on controlled
 
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
-- **Major AI Services: Supports "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
+- **Major AI Services: Supports "OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
 - **Standard Interface**: Supports other AI services that follow the OpenAI API standard.
 - **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
 - **Multi-Language Support**: Speech recognition supports Chinese, English, and bilingual Chinese–English (more
@@ -39,7 +39,7 @@ helping users to immersively use AI assistants across applications on controlled
 
 <details><summary><strong>AI Settings</strong></summary>
 
-**Multi-Channel Support** Supports AI tools like "Qwen, OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
+**Multi-Channel Support** Supports AI tools like "OpenAI, Claude, Gemini, Antigravity, Kimi" as backend large
 language models (LLMs).
 
 ![Login Authentication](assets/auth.webp "Login Authentication")
