@@ -6,7 +6,7 @@
         <img src="https://img.shields.io/github/v/release/HEUDavid/shadow-ai?color=c351e3&style=flat-square"
              alt="Releases"></a>
     <a href="https://github.com/HEUDavid/shadow-ai/releases/latest" target="_blank">
-        <img src="https://img.shields.io/badge/Support-Windows, macOS-0969da?style=flat-square"
+        <img src="https://img.shields.io/badge/support-Windows, macOS-0969da?style=flat-square"
              alt="Support OS"></a>
   </p>
 
