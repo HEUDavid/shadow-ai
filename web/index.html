@@ -291,10 +291,16 @@
 
         .feature-card {
             position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            padding: 28px 24px;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-template-areas: 
+                "icon title"
+                "icon desc";
+            column-gap: 16px;
+            row-gap: 6px;
+            align-items: start;
+            align-content: start;
+            padding: 24px 20px;
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 18px;
@@ -329,6 +335,8 @@
         }
 
         .feature-icon {
+            grid-area: icon;
+            align-self: center;
             width: 44px;
             height: 44px;
             display: flex;
@@ -340,12 +348,14 @@
         }
 
         .feature-title {
+            grid-area: title;
             font-size: 1rem;
             font-weight: 600;
             color: var(--text);
         }
 
         .feature-desc {
+            grid-area: desc;
             font-size: 0.85rem;
             color: var(--text-muted);
             line-height: 1.6;
@@ -922,7 +932,7 @@
             'f1-title': 'Stealth Mode',
             'f1-desc': 'Runs silently in the background on target devices — no window, no trace',
             'f2-title': 'Cross-Device',
-            'f2-desc': 'Remote control via LAN using smartphones or tablets',
+            'f2-desc': 'Supports remote takeover and control via LAN using devices like smartphones or tablets',
             'f3-title': 'Major AI Services',
             'f3-desc': 'Supports OpenAI, Claude, Gemini, Antigravity, Kimi — fast and stable',
             'f4-title': 'Standard API',
@@ -930,7 +940,7 @@
             'f5-title': 'Concurrency & Routing',
             'f5-desc': 'Multi-account login with concurrent requests, showing the fastest response',
             'f6-title': 'Speech Recognition',
-            'f6-desc': 'Real-Time Speech recognition (low-latency speech-to-text, supports Chinese, English, and bilingual Chinese–English), combined with visual analysis for multimodal interaction',
+            'f6-desc': 'Supports Chinese, English, and bilingual Chinese–English, combined with visual analysis for multimodal interaction',
             'screenshots-label': 'Interface',
             'screenshots-title': 'Clean & Elegant Design',
             'ss-vlm-q': 'Image Question',
@@ -966,11 +976,11 @@
             'f3-title': '大厂 AI 服务',
             'f3-desc': '支持 OpenAI、Claude、Gemini、Antigravity、Kimi，极速稳定',
             'f4-title': '标准接口',
-            'f4-desc': '支持其他 OpenAI API 规范的 AI 服务',
+            'f4-desc': '支持其他遵循 OpenAI API 规范的 AI 服务，支持自定义系统提示词等',
             'f5-title': '并发与路由',
             'f5-desc': '支持多账号登录与并发请求，显示最快的回答',
             'f6-title': '语音识别',
-            'f6-desc': '支持实时语音转写（支持中英混杂，极低延迟），配合视觉分析实现多模态交互',
+            'f6-desc': '支持实时语音转写（支持中英混杂，极低延迟）',
             'screenshots-label': '产品界面',
             'screenshots-title': '简洁优雅的界面',
             'ss-vlm-q': '图片提问',
