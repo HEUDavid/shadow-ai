@@ -26,7 +26,8 @@ helping users to immersively use AI assistants across applications on controlled
 - **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
 - **Major AI Services: Supports "OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
 - **Standard Interface**: Supports other AI services that follow the OpenAI API standard.
-- **Concurrency & Routing**: Supports multiple accounts and concurrent requests.
+- **Concurrency & Routing**: Supports multi-account and concurrency, with deeply optimized pipelines for ultra-low
+  overhead and minimal interaction latency.
 - **Multi-Language Support**: Speech recognition supports Chinese, English, and bilingual Chinese–English (more
   languages are being added). Choose the appropriate STT model based on your use case.
 
@@ -49,7 +50,7 @@ language models (LLMs).
 ![Test AI](assets/test-ai.webp "Test AI")
 
 **Switch Models** You can specify different models for visual (screenshot analysis) and audio (voice Q&A). Selecting
-multiple models enables concurrent queries, displaying the fastest response.
+multiple models enables concurrent requests, and you can swipe left/right to switch between AI responses.
 
 ![Configure AI](assets/default-model.webp "Configure Default AI Service")
 
@@ -63,6 +64,8 @@ multiple models enables concurrent queries, displaying the fastest response.
 
 This project is under iterative development. If you have any **bug reports, feature requests, or usage questions**,
 please feel free to join our group and provide feedback.
+If you have **specific feature requirements or AI services adapted**, feel free to contact me. I will evaluate and
+implement them for you.
 
 <details><summary><strong>Telegram</strong></summary>
 
