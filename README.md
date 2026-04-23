@@ -23,11 +23,11 @@ Essentially, it is an automated collaboration layer of "screen/audio capture + A
 helping users to immersively use AI assistants across applications on controlled devices or in restricted environments.
 
 - **Stealth Operation**: Supports silent background operation on target devices with no frontend window.
-- **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like smartphones or tablets.
+- **Cross-Platform Control**: Supports remote takeover and control via LAN using devices like phones or tablets.
 - **Major AI Services: Supports "OpenAI, Claude, Gemini, Antigravity, Kimi" - FAST and STABLE.**
 - **Standard Interface**: Supports other AI services that follow the OpenAI API standard.
-- **Concurrency & Routing**: Supports multi-account and concurrency, with deeply optimized pipelines for ultra-low
-  overhead and minimal interaction latency.
+- **Concurrency & Routing**: Supports multi-account & concurrency, with an extremely optimized pipeline (ultra-low
+  upfront overhead and interaction latency).
 - **Multi-Language Support**: Speech recognition supports Chinese, English, and bilingual Chinese–English (more
   languages are being added). Choose the appropriate STT model based on your use case.
 
