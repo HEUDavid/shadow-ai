@@ -33,7 +33,7 @@ jobs:
           app-name: ${{ matrix.app-name }}
           token: ${{ secrets.SOURCE_REPO_PAT }}
 
-      - uses: softprops/action-gh-release@v2
+      - uses: softprops/action-gh-release@v3
         with:
           name: Release v${{ steps.build.outputs.version }}
           tag_name: v${{ steps.build.outputs.version }}
